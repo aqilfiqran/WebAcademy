@@ -1,5 +1,17 @@
 aqil = budi = "20 tahun"
 
-nama = ['Aqil', 20, 'Mahasiswa']
+# index dimulai dari 0 bukan 1
+nama = ['Aqil', 20, 'Mahasiswa']  # list
+nama[0] = 'badri'
+mahasiswa = ('aqil', 'budi', 'badri', 'prinanda',
+             'putra', 'tes', 'belajar')  # tuple
 
-print(aqil, budi)
+# akhiri dari index akhir + 1
+print(mahasiswa[:2])  # 0 1
+# mulai dari index awal
+print(mahasiswa[1:])  # 1 2 3 4
+
+print(mahasiswa[1:4])
+
+# negatif index
+print(mahasiswa[:-2])
