@@ -27,3 +27,11 @@ mahasiswa = {
 # mhs akan mengambi key
 for mhs in mahasiswa:
     print(mahasiswa[mhs])
+
+# else akan dijalankan pada saat semua perulangan berhasil dilaksanakan
+for angka in range(1, 11):
+    if angka == 5:
+        break
+    print(angka)
+else:
+    print('berhasil')
