@@ -42,18 +42,25 @@ Pelatihan Python dan Django bagi pemula
 
 1. Download [python](https://www.python.org/) dan install
 2. Install virtualenv
+
 ```
       $ pip install virtualenv
 ```
+
 3. Buat virtualenv
+
 ```
       $ virtualenv env
 ```
+
 4. Aktivasi virtual environment python
+
 ```
       $ env\Script\activate
 ```
+
 5. Install django dan pillow
+
 ```
  (env)$ pip install django pillow
 ```
@@ -65,6 +72,26 @@ Lakukan langkah <1> <2> <5> <3> secara berurutan
 ## Membuat model
 
 Lakukan langkah <6> <2>
+
+## Menjalankan projek folder ini
+
+1. Buat virtual environment python
+
+```
+      $ virtualenv env
+```
+
+2. Aktivasi virtual environment
+
+```
+      $ <nama virtual environment>\Script\activate
+```
+
+3. Install modul yang dibutuhkan diprojek folder ini
+
+```
+ (env)$ pip install -r requirements.txt
+```
 
 ## Sumber refensi
 
