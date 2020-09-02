@@ -27,3 +27,10 @@ print(kls.jurusan)
 
 # pemanggilan fungsi class
 kls.berlari()
+
+
+# oop
+# 1. inheritance
+# 2. polimorfisme
+# 3. encapsulation
+# 4. abstract
