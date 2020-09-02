@@ -4,8 +4,15 @@ from django.shortcuts import render
 
 
 def indexView(request):
-    return render(request, 'index.html')
+    context = {
+        'title': 'WebAcademy | index',
+
+    }
+    return render(request, 'index.html', context)
 
 
 def aboutView(request):
-    return render(request, 'about.html')
+    context = {
+        'title': 'WebAcademy | about'
+    }
+    return render(request, 'about.html', context)
