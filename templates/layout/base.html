@@ -8,11 +8,9 @@
 
 <body>
     {% include 'layout/navbar.html' %}
-    <h1>Selamat Datang Di Pelatihan Web Academy</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse aut dolor facilis distinctio earum ad.
-        Cumque ex nemo praesentium porro quas assumenda? Quia accusamus culpa praesentium ut nostrum magnam corporis
-        vitae molestias, cum voluptas aperiam quidem totam tempora dignissimos modi iure quaerat ullam unde sit!
-        Sapiente neque natus exercitationem.</p>
+
+    {% block content %}
+    {% endblock content %}
 
     {% include 'layout/footer.html' %}
 </body>
