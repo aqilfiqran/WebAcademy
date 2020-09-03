@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic import ListView, DetailView, TemplateView, UpdateView, CreateView
 from .models import Article
+from .forms import ArticleForm
+
 # Create your views here.
 
 
@@ -23,6 +25,7 @@ class ArticleList(ListView):
     template_name = 'user/list.html'
     model = Article
     ordering = ['-updated_at']
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -37,6 +40,27 @@ class ArticleDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'WebAcademy | Detail'
+        return context
+
+
+class ArticleUpdate(UpdateView):
+    template_name = 'user/update.html'
+    form_class = ArticleForm
+    model = Article
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'WebAcademy | Update'
+        return context
+
+
+class ArticleCreate(CreateView):
+    template_name = 'user/update.html'
+    form_class = ArticleForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'WebAcademy | Create'
         return context
 
 

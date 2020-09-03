@@ -1,3 +1,7 @@
 body {
     background: rgba(184, 222, 240, 0.657);
 }
+
+.bg-primary {
+    background-color: #00ff77 !important;
+}

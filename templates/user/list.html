@@ -2,6 +2,7 @@
 {% load humanize %}
 {% block content %}
 <div class="container-fluid">
+    <a href="{% url 'user:articleCreate' %}" class="btn btn-primary">Create Data</a>
     {% for artikel in object_list %}
     <div class="card mt-3">
         <div class="row no-gutters">
@@ -14,6 +15,7 @@
                     <p class="card-text"><small class="text-muted">{{ artikel.updated_at|naturaltime }}</small></p>
                     <a href="{% url 'user:articleDetail' artikel.id %}" class="btn btn-primary">Selengkapnya</a>
                     <a href="{% url 'user:articleDelete' artikel.id %}" class="btn btn-danger">Delete</a>
+                    <a href="{% url 'user:articleUpdate' artikel.id %}" class="btn btn-primary">Update</a>
 
 
                 </div>
@@ -24,6 +26,27 @@
     <h1>tidak ada data</h1>
     {% endfor %}
 
+    {% if is_paginated %}
+    <div class="row justify-content-center mt-5">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                </li>
+                {% endif %}
+
+                {% for page in paginator.page_range %}
+                <li class="page-item"><a class="page-link" href="?page={{page}}">{{ page }}</a></li>
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
+    </div>
+    {% endif %}
 </div>
 
 {% endblock content %}
