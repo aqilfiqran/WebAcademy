@@ -1,7 +1,39 @@
 body {
-    background: rgba(184, 222, 240, 0.657);
+    background: rgba(250, 210, 251, 0.657);
+
+}
+
+.theme-light {
+    --warna-utama: #d12a78ad;
+    --warna-hover: #ee3189ad;
+    --warna-card: rgba(250, 210, 251, 0.657);
+}
+
+.theme-dark {
+    --warna-utama: #2ad1b5ad;
+    --warna-hover: #31deeead;
+    --warna-card: rgba(210, 223, 251, 0.657);
 }
 
 .bg-primary {
-    background-color: #00ff77 !important;
+    background-color: var(--warna-utama) !important;
+}
+
+.btn-primary {
+    background-color: var(--warna-utama) !important;
+    transition: .5s;
+}
+
+.btn-primary:hover {
+    background-color: var(--warna-hover) !important;
+}
+
+/* banner */
+.w-100 {
+    width: 100% !important;
+    height: 300px;
+}
+
+.card {
+    background: var(--warna-card);
 }

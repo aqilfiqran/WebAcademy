@@ -6,10 +6,12 @@
     {% include 'layout/header.html' %}
 </head>
 
-<body style="min-height:100vh;">
+<body class="theme-dark">
 
     {% include 'layout/navbar.html' %}
+    {% include 'layout/banner.html' %}
 
+    <div class="btn btn-primary ubahtema">Change</div>
     {% block content %}
     dia gaada extend apa apa
     {% endblock content %}
@@ -17,5 +19,27 @@
     {% include 'layout/footer.html' %}
 </body>
 {% include 'layout/script.html' %}
+<script>
+    const tema = document.querySelector('.ubahtema')
+    const body = document.querySelector('body')
+
+
+    tema.addEventListener('click', res => {
+        if (body.classList.value === 'theme-dark') {
+            body.classList.add('theme-light')
+            body.classList.remove('theme-dark')
+        } else {
+            body.classList.add('theme-dark')
+            body.classList.remove('theme-light')
+        }
+    })
+
+    const input = document.querySelector('.custom-file-input')
+    const label = document.querySelector('.custom-file-label')
+
+    input.addEventListener('change', function (res) {
+        label.innerHTML = res.target.value
+    })
+</script>
 
 </html>
